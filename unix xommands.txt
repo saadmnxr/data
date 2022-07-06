@@ -1,0 +1,41 @@
+2.) cal –used to display the calendar
+Syn:$cal 2 2009
+3.) echo –used to print the message on the screen.
+Syn:$echo “text”
+4.) ls –used to list the files. Your files are kept in a directory.
+Syn:$ls–s
+All files (include files with prefix)
+ls–l Lodetai (provide file statistics)
+ls–t Order by creation time
+ls– u Sort by access time (or show when last accessed together with –l)
+ls–s Order by size
+ls–r Reverse order
+ls–f Mark directories with /,executable with* , symbolic links with @, local
+sockets with =, named pipes(FIFOs)with
+ls–s Show file size
+ls– h“ Human Readable”, show file size in Kilo Bytes & Mega Bytes (h can be
+used together with –l or)
+ls[a-m]*List all the files whose name begin with alphabets From „a‟ to „m‟ ls[a]*List
+all the files whose name begins with „a‟ or „A‟
+Eg:$ls>my list Output of „ls‟ command is stored to disk file named „my list‟
+5.) lp –used to take printouts
+Syn:$lp filename
+6.) man –used to provide manual help on every UNIX commands.
+Syn:$man unix command
+$man cat
+7.) who & whoami –it displays data about all users who have logged into the system
+currently. The next command displays about current user only.
+Syn:$who$whoami
+8.) uptime –tells you how long the computer has been running since its last reboot or
+power-off.
+Syn:$uptime
+9.) uname –it displays the system information such as hardware platform, system
+name and processor, OS type.
+Syn:$uname–a
+10.) hostname –displays and set system host name
+Syn:$ hostname
+11.) bc –stands for “best calculator”
+$bc
+10/2*3
+15
+Quit
