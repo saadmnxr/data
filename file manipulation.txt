@@ -1,0 +1,54 @@
+1.) cat–this create, view and concatenate files.
+Creation:
+Syn:$cat>filename
+2.) Viewing:
+Syn:$cat filename
+Add text to an existing file:
+Syn:$cat>>filename
+3.) Concatenate:
+Syn:$catfile1file2>file3
+$catfile1file2>>file3 (no over writing of file3)
+4.) grep–used to search a particular word or pattern related to that word from the file.
+Syn:$grep search word filename
+Eg:$grep anu student
+5.) rm–deletes a file from the file system
+Syn:$rm filename
+6.) touch–used to create a blank file.
+Syn:$touch file names
+7.) cp–copies the files or directories
+Syn:$cpsource file destination file
+Eg:$cp student stud
+8.) mv–to rename the file or directory
+syn:$mv old file new file
+Eg:$mv–i student student list(-i prompt when overwrite)
+9.) cut–it cuts or pickup a given number of character or fields of the file.
+Syn:$cut<option><filename>
+Eg: $cut –c filename
+$cut–c1-10emp
+$cut–f 3,6emp
+$ cut –f 3-6 emp -c cutting columns -f cutting fields
+10.) head–displays10 lines from the head(top) of a given file
+Syn: $head filename
+Eg: $head student
+To display the top two lines:
+Syn: $head-2student i)
+11.) tail–displays last 10 lines of the file
+Syn: $tail filename
+Eg: $tail student
+To display the bottom two lines;
+Syn: $ tail -2 student
+12.) chmod–used to change the permissions of a file or directory.
+Syn:$ch mod category operation permission file
+Where, Category–is the user type
+Operation–is used to assign or remove permission
+Permission–is the type of permission
+File–are used to assign or remove permission all
+Examples:
+$chmodu-wx student
+Removes write and execute permission for users
+$ch modu+rw,g+rwstudent
+Assigns read and write permission for users and groups
+$chmodg=rwx student
+Assigns absolute permission for groups of all read, write and execute permissions
+13.) wc–it counts the number of lines, words, character in a specified file(s) with the
+options as –l,-w,-c

@@ -1,0 +1,55 @@
+SSTF:
+Shortest seek time first (SSTF) algorithm selects the disk I/O request which requires
+the least disk arm movement from its current position regardless of the direction. It
+reduces the total seek time as compared to FCFS.
+Algorithm:
+1. Let Request array represents an array storing indexes of tracks that have been requested.
+‘head’ is the position of disk head.
+2. Find the positive distance of all tracks in the request array from head.
+3. Find a track from requested array which has not been accessed/serviced yet and has
+minimum distance from head.
+4. Increment the total seek count with this distance.
+5. Currently serviced track position now becomes the new head position.
+6. Go to step 2 until all tracks in request array have not been serviced.
+
+
+#include<stdio.h>
+#include<stdlib.h>
+int main()
+{
+ int RQ[100],i,n,TotalHeadMoment=0,initial,count=0;
+ printf("Enter the number of Requests\n");
+ scanf("%d",&n);
+ printf("Enter the Requests sequence\n");
+ for(i=0;i<n;i++)
+ scanf("%d",&RQ[i]);
+ printf("Enter initial head position\n");
+ scanf("%d",&initial);
+
+ // logic for sstf disk scheduling
+
+ /* loop will execute until all process is completed*/
+ while(count!=n)
+ {
+ int min=1000,d,index;
+ for(i=0;i<n;i++)
+ {
+ d=abs(RQ[i]-initial);
+if(min>d)
+ {
+ min=d;
+ index=i;
+ }
+
+ }
+ TotalHeadMoment=TotalHeadMoment+min;
+ initial=RQ[index];
+ // 1000 is for max
+ // you can use any number
+ RQ[index]=1000;
+ count++;
+ }
+
+ printf("Total head movement is %d",TotalHeadMoment);
+ return 0;
+}

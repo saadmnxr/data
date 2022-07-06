@@ -1,0 +1,49 @@
+In many applications, creating multiple processes is an effective method for task
+decomposition. For example, a network server process can create a new sub process to
+process each request while listening for client requests. At the same time, the server process
+will continue to listen for more client connection request s. Decomposing tasks in such a way
+usually simplifies the design of applications and improves the concurrency of the system.
+(That is, more tasks or requests can be processed at the same time.)
+
+
+#include<stdio.h>
+#include<sys/types.h>
+#include<unistd.h>
+ #include<sys/wait.h>
+ #include<stdlib.h>
+ #include<errno.h>
+ #include<string.h>
+
+ int main()
+{
+ pid_t childPid;
+ /* if((childPid=fork())==-1)
+ {
+ printf("Fork error %s\n",strerror(errno));
+ exit(1);
+ }
+ else
+ if(childPid==0)
+ {
+ printf("I am the child : %d\n",getpid());
+ exit(0);
+ }
+ else
+ {
+ printf("I am the father : %d\n",getpid());
+ exit(0);
+ } */
+ switch(childPid=fork()){
+ case -1:
+ printf("Fork error %s\n",strerror(errno));
+ exit(1);
+ case 0:
+printf("I am the child : %d\n",getpid());
+ exit(0);
+ default:
+ printf("I am the father : %d\n",getpid());
+ exit(0);
+
+ }
+ return 0;
+}
